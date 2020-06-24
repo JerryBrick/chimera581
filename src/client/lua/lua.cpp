@@ -168,7 +168,7 @@ void load_map_script() noexcept {
         fseek(f, 0, SEEK_SET);
         auto d = std::make_unique<char[]>(size);
         fread(d.get(), size, 1, f);
-        load_lua_script(map.data(), d.get(), size, false, false);
+        load_lua_script(map.data(), d.get(), size, true, false);
         fclose(f);
     }
     else {
