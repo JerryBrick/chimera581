@@ -169,7 +169,9 @@ ChimeraCommandError chimera_command(size_t argc, const char **argv) noexcept {
     if(argc == 0) {
         std::vector<std::string> list_a;
         const auto version_color = ColorARGB(1.0, 1.0, 0.478, 0.552);
-        console_out("Chimera build " CHIMERA_BUILD_STRING " by " CHIMERA_AUTHOR, version_color);
+        const auto version_color_blue = ColorARGB(1.0, 0.078, 0.392, 0.949);
+        console_out("Chimera build " CHIMERA_BUILD_STRING " by " CHIMERA_MOD, version_color_blue);
+        console_out("Based on build -581 (50 alpha) by " CHIMERA_AUTHOR, version_color);
         console_out("Lua API version (clua_version): " STR(CHIMERA_LUA_INTERPRETER), version_color);
         for(size_t i=0;i<(*commands).size();i++) {
             auto &command = (*commands)[i];
